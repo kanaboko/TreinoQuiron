@@ -5,9 +5,9 @@ VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuironLojaVirtual.Web", "QuironLojaVirtual.Web\QuironLojaVirtual.Web.csproj", "{954B0CCA-4A17-4218-985D-5E7E10B6234E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuironLojaVirtual.Domain", "ClassLibrary1\QuironLojaVirtual.Domain.csproj", "{D02B9C5B-13F2-4076-82D3-F73712034CE0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuironLojaVirtual.Test", "QuironLojaVirtual.Test\QuironLojaVirtual.Test.csproj", "{2378970E-AA38-45D3-A6B1-B3026EC87C57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuironLojaVirtual.Domain", "QuironLojaVirtual.Domain\QuironLojaVirtual.Domain.csproj", "{3BA24772-4773-40E8-8537-45C0A40E1F55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{954B0CCA-4A17-4218-985D-5E7E10B6234E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{954B0CCA-4A17-4218-985D-5E7E10B6234E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{954B0CCA-4A17-4218-985D-5E7E10B6234E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D02B9C5B-13F2-4076-82D3-F73712034CE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D02B9C5B-13F2-4076-82D3-F73712034CE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D02B9C5B-13F2-4076-82D3-F73712034CE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D02B9C5B-13F2-4076-82D3-F73712034CE0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2378970E-AA38-45D3-A6B1-B3026EC87C57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2378970E-AA38-45D3-A6B1-B3026EC87C57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2378970E-AA38-45D3-A6B1-B3026EC87C57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2378970E-AA38-45D3-A6B1-B3026EC87C57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BA24772-4773-40E8-8537-45C0A40E1F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BA24772-4773-40E8-8537-45C0A40E1F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BA24772-4773-40E8-8537-45C0A40E1F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BA24772-4773-40E8-8537-45C0A40E1F55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
