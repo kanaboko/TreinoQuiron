@@ -14,7 +14,7 @@ namespace QuironLojaVirtual.Web.Helpers
         {
             StringBuilder resultado = new StringBuilder();
 
-            for (int i = 0; i <= paginacao.TotalDePaginas; i++)
+            for (int i = 1; i <= paginacao.TotalDePaginas; i++)
             {
                 TagBuilder tag = new TagBuilder("a");
                 tag.MergeAttribute("href",paginaUrl(i));
