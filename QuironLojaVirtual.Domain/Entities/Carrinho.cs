@@ -13,6 +13,7 @@ namespace QuironLojaVirtual.Domain.Entities
 
         public void AdcionarItem(Produto produto, int quantidade)
         {
+            
             ItemCarrinho item = _itemCarrinho.FirstOrDefault(i => i.Produto.ProdutoId == produto.ProdutoId);
             if (item == null)
             {
@@ -35,7 +36,9 @@ namespace QuironLojaVirtual.Domain.Entities
 
         public decimal ObterValorTotal()
         {
+
             return _itemCarrinho.Sum(p => p.Produto.Preco * p.Quantidade);
+
         }
 
         public void LimparCarrinho()

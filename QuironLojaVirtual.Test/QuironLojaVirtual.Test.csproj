@@ -77,6 +77,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\QuironLojaVirtual.Domain\QuironLojaVirtual.Domain.csproj">
+      <Project>{3BA24772-4773-40E8-8537-45C0A40E1F55}</Project>
+      <Name>QuironLojaVirtual.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\QuironLojaVirtual.Web\QuironLojaVirtual.Web.csproj">
       <Project>{954B0CCA-4A17-4218-985D-5E7E10B6234E}</Project>
       <Name>QuironLojaVirtual.Web</Name>
