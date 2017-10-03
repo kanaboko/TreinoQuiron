@@ -7,6 +7,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using QuironLojaVirtual.Domain.Entities;
 using QuironLojaVirtual.Domain.Repository;
+using QuironLojaVirtual.Web.ViewModel;
 
 namespace QuironLojaVirtual.Web.Controllers
 {
@@ -45,6 +46,21 @@ namespace QuironLojaVirtual.Web.Controllers
                 Session["Carrinho"] = carrinho;
             }
             return carrinho;
+        }
+
+        public ViewResult Index(string returnurl)
+        {
+            return View(new CarrinhoViewModel()
+            {
+                Carrinho = ObterCarrinho(),
+                ReturnUrl = returnurl
+            });
+        }
+
+        public PartialViewResult Resumo()
+        {
+            var Carrinho = ObterCarrinho();
+            return PartialView(Carrinho);
         }
     }
 }
