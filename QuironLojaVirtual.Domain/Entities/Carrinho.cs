@@ -50,7 +50,7 @@ namespace QuironLojaVirtual.Domain.Entities
 
     }
 
-public class ItemCarrinho
+    public class ItemCarrinho
     {
         public Produto Produto { get; set; }
         public int Quantidade { get; set; }

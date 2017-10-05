@@ -1,0 +1,68 @@
+﻿@model QuironLojaVirtual.Domain.Entities.Pedido
+
+@{
+    ViewBag.Title = "Quiron - Fechar Pedido";
+}
+
+<h2>Fechar o pedido</h2>
+
+<p>Digite suas informações abaixo</p>
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <div class="form-group">
+        <label>@Html.DisplayNameFor(x => x.Nome)</label>
+        @Html.TextBoxFor(x => x.Nome, new{@class="form-control"})
+    </div>
+
+    <h3>Dados para entrega</h3>
+
+    foreach (var property in ViewData.ModelMetadata.Properties)
+    {
+        if (property.PropertyName != "Nome" && property.PropertyName != "EmbrulhaPresente")
+        {
+            <div class="form-group">
+                <label>@(property.DisplayName ?? @property.PropertyName)</label>
+                @Html.TextBox(property.PropertyName,null,new{@class="form-control", placeholder="Insira o "+property.DisplayName})
+            </div>
+        }
+    }
+
+    <div class="checkbox">
+        @Html.DisplayNameFor(x => x.EmbrulhaPresente)
+        @Html.EditorFor(x => x.EmbrulhaPresente)
+    </div>
+
+    <input class="btn btn-primary" type="submit" value="Fechar o pedido"/>
+
+}
+
+<script>
+    $('#Cep').change(function(e) {
+        //e.preventDefault();
+        $("#Endereco").val("");
+        $("#Bairro").val("");
+        $("#Cidade").val("");
+        $("#Estado").val("");
+
+        var cep = $("#Cep").val().replace("-", "");
+
+        $.getJSON("http://cep.republicavirtual.com.br/web_cep.php?cep=" + cep + "&formato=json",
+            {},
+            function(data) {
+                if (data.resultado == "1") {
+
+                    $("#Endereco").val(data.tipo_logradouro + " " + data.logradouro);
+                    $("#Bairro").val(data.bairro);
+                    $("#Cidade").val(data.cidade);
+                    $("#Estado").val(data.estado);
+
+                } else {
+                    alert("Endereco não encontrado");
+                }
+            });
+    });
+</script>
+
+
