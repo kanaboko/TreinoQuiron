@@ -17,5 +17,7 @@ namespace QuironLojaVirtual.Domain.Repository
         {
             get { return _context.Produtos; } 
         }
+
+        
     }
 }

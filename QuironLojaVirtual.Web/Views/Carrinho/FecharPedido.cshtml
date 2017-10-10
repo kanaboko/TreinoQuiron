@@ -10,10 +10,11 @@
 
 @using (Html.BeginForm())
 {
-    @Html.ValidationSummary(true)
+    @Html.ValidationSummary()
     <div class="form-group">
         <label>@Html.DisplayNameFor(x => x.Nome)</label>
         @Html.TextBoxFor(x => x.Nome, new{@class="form-control"})
+        @Html.ValidationMessageFor(m=>m.Nome)
     </div>
 
     <h3>Dados para entrega</h3>
@@ -25,6 +26,7 @@
             <div class="form-group">
                 <label>@(property.DisplayName ?? @property.PropertyName)</label>
                 @Html.TextBox(property.PropertyName,null,new{@class="form-control", placeholder="Insira o "+property.DisplayName})
+                @Html.ValidationMessage(property.PropertyName)
             </div>
         }
     }

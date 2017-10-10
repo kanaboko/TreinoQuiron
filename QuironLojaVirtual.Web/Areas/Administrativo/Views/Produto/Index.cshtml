@@ -1,0 +1,52 @@
+﻿@model IEnumerable<QuironLojaVirtual.Domain.Entities.Produto>
+
+@{
+    ViewBag.Title = "Administrativo - Produtos";
+}
+
+<div class="alert alert-success" id="mensagem"></div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>Quiron Projects - Administrativo</h2>
+    </div>
+    <div class="panel-body">
+        @Html.ActionLink("Novo Produto", "NovoProduto", "Produto", new{@class="btn btn-default"})
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed">
+            <thead>
+            <tr>
+                <th class="text-right">@Html.DisplayNameFor(x => x.ProdutoId)</th>
+                <th>@Html.DisplayNameFor(x => x.Nome)</th>
+                <th class="text-right">@Html.DisplayNameFor(x => x.Categoria)</th>
+                <th class="text-right">@Html.DisplayNameFor(x=>x.Preco)</th>
+                <th class="text-center" >Excluir</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model)
+            {
+                <tr id="row-@item.ProdutoId">
+                    <td class="text-right">@item.ProdutoId</td>
+                    <td>@Html.ActionLink(item.Nome,"Alterar", new{item.ProdutoId})</td>
+                    <td class="text-right">@item.Categoria</td>
+                    <td class="text-right">@item.Preco.ToString("C")</td>
+                    <td class="text-center">@using (Html.BeginForm("Excluir", "Produto"))
+                        {
+                            @Html.Hidden("ProdutoId", item.ProdutoId)
+                            <input type="submit" class="btn btn-default btn-xs" value="Excluir"/>
+                        }
+                    </td>
+                </tr>
+            }
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+

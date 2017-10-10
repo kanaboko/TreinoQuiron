@@ -112,11 +112,17 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\StyleError.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Administrativo\Views\web.config" />
+    <Content Include="Areas\Administrativo\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Administrativo\Views\Shared\_AdministrativoLayout.cshtml" />
+    <Content Include="Areas\Administrativo\Views\Produto\Index.cshtml" />
+    <Content Include="Areas\Administrativo\Views\Produto\Alterar.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -132,6 +138,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Administrativo\AdministrativoAreaRegistration.cs" />
+    <Compile Include="Areas\Administrativo\Controllers\ProdutoController.cs" />
     <Compile Include="Controllers\CarrinhoController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\VitrineController.cs" />
@@ -156,6 +164,7 @@
     <Content Include="Views\Carrinho\Index.cshtml" />
     <Content Include="Views\Carrinho\Resumo.cshtml" />
     <Content Include="Views\Carrinho\FecharPedido.cshtml" />
+    <Content Include="Views\Carrinho\PedidoConcluido.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -165,6 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Administrativo\Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\QuironLojaVirtual.Domain\QuironLojaVirtual.Domain.csproj">
