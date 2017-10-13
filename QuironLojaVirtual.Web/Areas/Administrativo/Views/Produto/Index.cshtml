@@ -4,14 +4,14 @@
     ViewBag.Title = "Administrativo - Produtos";
 }
 
-<div class="alert alert-success" id="mensagem"></div>
+@*<div class="alert alert-success" id="mensagem"></div>*@
 
 <div class="panel panel-default">
     <div class="panel-heading">
         <h2>Quiron Projects - Administrativo</h2>
     </div>
     <div class="panel-body">
-        @Html.ActionLink("Novo Produto", "NovoProduto", "Produto", new{@class="btn btn-default"})
+        @Html.ActionLink("Novo Produto", "Adicionar", "Produto", new{@class="btn btn-default"})
     </div>
     <div class="table-responsive">
         <table class="table table-bordered table-condensed">
