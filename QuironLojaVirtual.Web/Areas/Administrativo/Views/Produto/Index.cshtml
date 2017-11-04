@@ -6,6 +6,8 @@
 
 @*<div class="alert alert-success" id="mensagem"></div>*@
 
+<div id="divexcluir"></div>
+
 <div class="panel panel-default">
     <div class="panel-heading">
         <h2>Quiron Projects - Administrativo</h2>
@@ -32,11 +34,14 @@
                     <td>@Html.ActionLink(item.Nome,"Alterar", new{item.ProdutoId})</td>
                     <td class="text-right">@item.Categoria</td>
                     <td class="text-right">@item.Preco.ToString("C")</td>
-                    <td class="text-center">@using (Html.BeginForm("Excluir", "Produto"))
+                    @*<td class="text-center">@using (Html.BeginForm("Excluir", "Produto"))
                         {
                             @Html.Hidden("ProdutoId", item.ProdutoId)
-                            <input type="submit" class="btn btn-default btn-xs" value="Excluir"/>
+                            
                         }
+                    </td>*@
+                    <td>
+                        <input type="submit" class="btn btn-default btn-xs" id="@item.ProdutoId" name="@item.Nome" value="Excluir" />
                     </td>
                 </tr>
             }
@@ -47,6 +52,8 @@
     </div>
 
 </div>
+
+@Html.Partial("Confirmacao");
 
 
 

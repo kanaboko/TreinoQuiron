@@ -15,8 +15,10 @@ namespace QuironLojaVirtual.Domain.Repository
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Entity<Produto>().ToTable("Produtos");
+            modelBuilder.Entity<Administrador>().ToTable("Administradores");
         }
 
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Administrador> Administradores { get; set; }
     }
 }

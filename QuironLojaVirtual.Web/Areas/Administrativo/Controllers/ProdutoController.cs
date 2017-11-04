@@ -5,9 +5,11 @@ using System.Web;
 using System.Web.Mvc;
 using QuironLojaVirtual.Domain.Entities;
 using QuironLojaVirtual.Domain.Repository;
+using System.Threading;
 
 namespace QuironLojaVirtual.Web.Areas.Administrativo.Controllers
 {
+    [Authorize]
     public class ProdutoController : Controller
     {
         private ProdutoRepository _repository;
@@ -72,18 +74,35 @@ namespace QuironLojaVirtual.Web.Areas.Administrativo.Controllers
 
         }
 
+        //[HttpPost]
+        //public ActionResult Excluir(int produtoId)
+        //{
+        //    _repository = new ProdutoRepository();
+
+
+        //    if (_repository.Remover(produtoId))
+        //    {
+        //        TempData["Mensagem"] = string.Format($"Produto excluido com sucesso");
+        //    }
+
+        //    return RedirectToAction("Index");
+        //}
+
         [HttpPost]
-        public ActionResult Excluir(int produtoId)
+        public JsonResult Excluir(int produtoId)
         {
             _repository = new ProdutoRepository();
 
+            Thread.Sleep(5000);
+
+            string mensagem = string.Empty;
 
             if (_repository.Remover(produtoId))
             {
-                TempData["Mensagem"] = string.Format($"Produto excluido com sucesso");
+                mensagem = string.Format($"Produto excluido com sucesso");
             }
 
-            return RedirectToAction("Index");
+            return Json(mensagem, JsonRequestBehavior.AllowGet);
         }
     }
 }

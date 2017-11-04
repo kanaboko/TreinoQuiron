@@ -27,5 +27,7 @@ namespace QuironLojaVirtual.Domain.Entities
         [Required(ErrorMessage = "Ops! Você esqueceu a categoria")]
         [Display(Name = "Categoria:")]
         public string Categoria { get; set; }
+        public byte[] Imagem { get; set; }
+        public string ImageMimeType { get; set; }
     }
 }
